@@ -34,7 +34,7 @@ RUN wget https://ftp.gnu.org/pub/gnu/libiconv/libiconv-$LIBCONV_VERSION.tar.gz &
     make && make install
     
 # GhostScript (https://ghostscript.com)
-RUN wget https://github.com/ArtifexSoftware/ghostpdl-downloads/releases/download/gs923/ghostscript-9.23.tar.gz && tar -zxvf  ghostscript-9.23-linux-x86_64.tgz && cd ghostscript-9.23-linux-x86_64 && \
+RUN wget https://github.com/ArtifexSoftware/ghostpdl-downloads/releases/download/gs923/ghostscript-$GHOSTSCRIPT_VERSION.tar.gz && tar -zxvf  ghostscript-$GHOSTSCRIPT_VERSION.tar.gz && cd ghostscript-$GHOSTSCRIPT_VERSION && \
     ./configure && \
     make && make install
     # TODO Validate checksums (SHA1) https://github.com/ArtifexSoftware/ghostpdl-downloads/releases/download/gs923/SHA1SUMS
