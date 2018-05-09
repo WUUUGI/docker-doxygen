@@ -36,7 +36,7 @@ RUN wget https://ftp.gnu.org/pub/gnu/libiconv/libiconv-$LIBCONV_VERSION.tar.gz &
 # GhostScript (https://ghostscript.com)
 RUN wget https://github.com/ArtifexSoftware/ghostpdl-downloads/releases/download/gs923/ghostscript-9.23.tar.gz && tar -zxvf  ghostscript-9.23-linux-x86_64.tgz && cd ghostscript-9.23-linux-x86_64 && \
     ./configure && \
-    make && make install && \
+    make && make install
     # TODO Validate checksums (SHA1) https://github.com/ArtifexSoftware/ghostpdl-downloads/releases/download/gs923/SHA1SUMS
     # (MD5) https://github.com/ArtifexSoftware/ghostpdl-downloads/releases/download/gs923/SHA1SUMS
     
@@ -70,7 +70,7 @@ RUN git clone https://github.com/doxygen/doxygen.git && \
 
 # TODO: Remove folder and tar.gz
 RUN rm -rf /var/cache/apk/* && \
-    rm -rf /install  && \
+    rm -rf /install
     
 WORKDIR /doxy
 VOLUME ["/doxy"]
