@@ -29,19 +29,19 @@ RUN apk add build-base gcc abuild binutils binutils-doc gcc-doc
 RUN apk add flex bison	
     
 # libiconv: https://www.gnu.org/software/libiconv/
-RUN wget https://ftp.gnu.org/pub/gnu/libiconv/libiconv-$LIBCONV_VERSION.tar.gz && tar -xvzf libiconv-$LIBCONV_VERSION.tar.gz && cd libiconv-$LIBCONV_VERSION && \
+RUN wget https://ftp.gnu.org/pub/gnu/libiconv/libiconv-$LIBCONV_VERSION.tar.gz && tar -zxvf  libiconv-$LIBCONV_VERSION.tar.gz && cd libiconv-$LIBCONV_VERSION && \
     ./configure --prefix=/usr/local && \
     make && make install
     
 # GhostScript (https://ghostscript.com)
-RUN wget https://github.com/ArtifexSoftware/ghostpdl-downloads/releases/download/gs923/ghostscript-9.23-linux-x86_64.tgz && tar -xvfz ghostscript-9.23-linux-x86_64.tgz && cd ghostscript-9.23-linux-x86_64 && \
+RUN wget https://github.com/ArtifexSoftware/ghostpdl-downloads/releases/download/gs923/ghostscript-9.23-linux-x86_64.tgz && tar -zxvf  ghostscript-9.23-linux-x86_64.tgz && cd ghostscript-9.23-linux-x86_64 && \
     ./configure && \
     make && make install
     # TODO Validate checksums (SHA1) https://github.com/ArtifexSoftware/ghostpdl-downloads/releases/download/gs923/SHA1SUMS
     # (MD5) https://github.com/ArtifexSoftware/ghostpdl-downloads/releases/download/gs923/SHA1SUMS
     
 # PKG-Config (https://www.freedesktop.org/wiki/Software/pkg-config/)
-RUN wget https://pkg-config.freedesktop.org/releases/pkg-config-0.29.2.tar.gz && tar -xvfz pkg-config-0.29.2.tar.gz && cd pkg-config-0.29.2 && \
+RUN wget https://pkg-config.freedesktop.org/releases/pkg-config-0.29.2.tar.gz && tar -zxvf  pkg-config-0.29.2.tar.gz && cd pkg-config-0.29.2 && \
     ./configure --prefix=/usr && \
     make && make install
     
