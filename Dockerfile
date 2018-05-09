@@ -17,16 +17,16 @@ RUN echo 'http://dl-cdn.alpinelinux.org/alpine/edge/testing' >> /etc/apk/reposit
 RUN apk update
 
 # make, tar, git
-RUN apk add make tar git
+RUN apk add make tar git wget
     
 # CMake
 RUN apk add cmake cmake-doc extra-cmake-modules extra-cmake-modules-doc
-    
-# wget
-RUN apk add wget
+
+# GCC
+RUN apk add build-base gcc abuild binutils binutils-doc gcc-doc
     
 # Doxygen Dependencies
-RUN apk add flex bison binutils	
+RUN apk add flex bison	
     
 # libiconv: https://www.gnu.org/software/libiconv/
 RUN wget https://ftp.gnu.org/pub/gnu/libiconv/libiconv-$LIBCONV_VERSION.tar.gz && tar -xvzf libiconv-$LIBCONV_VERSION.tar.gz && cd libiconv-$LIBCONV_VERSION && \
@@ -36,7 +36,7 @@ RUN wget https://ftp.gnu.org/pub/gnu/libiconv/libiconv-$LIBCONV_VERSION.tar.gz &
 # GhostScript (https://ghostscript.com)
 RUN wget https://github.com/ArtifexSoftware/ghostpdl-downloads/releases/download/gs923/ghostscript-9.23-linux-x86_64.tgz && tar -xvfz ghostscript-9.23-linux-x86_64.tgz && cd ghostscript-9.23-linux-x86_64 && \
     ./configure && \
-    make && make install && \
+    make && make install
     # TODO Validate checksums (SHA1) https://github.com/ArtifexSoftware/ghostpdl-downloads/releases/download/gs923/SHA1SUMS
     # (MD5) https://github.com/ArtifexSoftware/ghostpdl-downloads/releases/download/gs923/SHA1SUMS
     
