@@ -26,7 +26,7 @@ RUN apk add cmake cmake-doc extra-cmake-modules extra-cmake-modules-doc
 RUN apk add wget
     
 # Doxygen Dependencies
-RUN apk add flex bison strip
+RUN apk add flex bison binutils	
     
 # libiconv: https://www.gnu.org/software/libiconv/
 RUN wget https://ftp.gnu.org/pub/gnu/libiconv/libiconv-$LIBCONV_VERSION.tar.gz && tar -xvzf libiconv-$LIBCONV_VERSION.tar.gz && cd libiconv-$LIBCONV_VERSION && \
