@@ -12,8 +12,8 @@ WORKDIR /install
 # enable edge repos
 RUN sed -i -e 's/v3\.4/edge/g' /etc/apk/repositories
 # enable testing
-RUN echo '@edge http://dl-cdn.alpinelinux.org/alpine/edge/main' >> /etc/apk/repositories
-#RUN echo '@edgetesting http://dl-cdn.alpinelinux.org/alpine/edge/testing' >> /etc/apk/repositories
+#RUN echo '@edge http://dl-cdn.alpinelinux.org/alpine/edge/main' >> /etc/apk/repositories
+RUN echo '@edge http://dl-cdn.alpinelinux.org/alpine/edge/testing' >> /etc/apk/repositories
 
 RUN apk update
 
