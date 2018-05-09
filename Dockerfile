@@ -9,8 +9,14 @@ ENV PKG_CONFIG_VERSION 0.29.2
 # Working directory
 WORKDIR /install
 
+# enable edge repos
+RUN sed -i -e 's/v3\.4/edge/g' /etc/apk/repositories
+# enable testing
+RUN echo 'http://dl-cdn.alpinelinux.org/alpine/edge/testing' >> /etc/apk/repositories
+
 RUN apk update
 
+# make, tar, git
 RUN apk add make tar git
     
 # CMake
