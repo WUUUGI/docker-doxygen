@@ -34,7 +34,7 @@ RUN wget https://ftp.gnu.org/pub/gnu/libiconv/libiconv-$LIBCONV_VERSION.tar.gz &
     make && make install
     
 # GhostScript (https://ghostscript.com)
-RUN apk add ghostscript ghostscript-fonts
+RUN apk add glib ghostscript ghostscript-fonts
     
 # PKG-Config (https://www.freedesktop.org/wiki/Software/pkg-config/)
 RUN wget https://pkg-config.freedesktop.org/releases/pkg-config-0.29.2.tar.gz && tar -zxvf  pkg-config-0.29.2.tar.gz && cd pkg-config-0.29.2 && \
