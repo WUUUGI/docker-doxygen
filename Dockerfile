@@ -48,7 +48,7 @@ RUN wget https://pkg-config.freedesktop.org/releases/pkg-config-0.29.2.tar.gz &&
 RUN apk add cairo expat freetype fontconfig glib zlib libpng
     
 # GraphViz tools 
-RUN apk add libtool swig
+RUN apk add libtool swig autoconf
     
 # GraphViz (https://graphviz.gitlab.io/)
 RUN git clone https://gitlab.com/graphviz/graphviz.git && \
