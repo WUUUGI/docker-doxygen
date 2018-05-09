@@ -38,7 +38,7 @@ RUN apk add ghostscript ghostscript-fonts
     
 # PKG-Config (https://www.freedesktop.org/wiki/Software/pkg-config/)
 RUN wget https://pkg-config.freedesktop.org/releases/pkg-config-0.29.2.tar.gz && tar -zxvf  pkg-config-0.29.2.tar.gz && cd pkg-config-0.29.2 && \
-    	./configure --prefix=/usr --with-internal-glib && \
+    	./configure --prefix=/usr/local --with-internal-glib && \
     	make && make install
     
 # GraphViz dependencies (https://graphviz.gitlab.io/_pages/Download/Download_source.html)
