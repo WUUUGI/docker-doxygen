@@ -17,6 +17,7 @@ RUN echo 'http://dl-cdn.alpinelinux.org/alpine/edge/testing' >> /etc/apk/reposit
 RUN apk update
 
 # https://wiki.alpinelinux.org/wiki/Alpine_Linux_package_management troubleshooting: apk tools is old
+RUN @edge http://nl.alpinelinux.org/alpine/edge/main >> /etc/apk/repositories
 RUN apk add --upgrade apk-tools@edge
 
 # make, tar, git
