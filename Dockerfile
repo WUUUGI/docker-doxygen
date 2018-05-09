@@ -42,17 +42,17 @@ RUN wget https://pkg-config.freedesktop.org/releases/pkg-config-0.29.2.tar.gz &&
     	make && make install
     
 # GraphViz dependencies (https://graphviz.gitlab.io/_pages/Download/Download_source.html)
-RUN apk add cairo expat freetype fontconfig glib zlib libpng lib
+RUN apk add cairo expat freetype fontconfig glib zlib libpng
     
 # GraphViz tools 
 RUN apk add libtool swig
     
 # GraphViz (https://graphviz.gitlab.io/)
-RUN git clone https://gitlab.com/graphviz/graphviz/ && \
+RUN git clone https://gitlab.com/graphviz/graphviz.git && \
     cd graphviz && \
     ./autogen.sh && \
-	./configure && \
-	make && make install
+    ./configure && \
+    make && make install
     
 # TeXlive
 RUN apk add texlive-full
