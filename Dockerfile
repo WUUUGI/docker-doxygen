@@ -38,7 +38,7 @@ RUN apk add make tar git && \
     make && make install && \
     
     # GraphViz dependencies (https://graphviz.gitlab.io/_pages/Download/Download_source.html)
-    apk add cairo expat freetype fontconfig glib zlib libpng lib
+    apk add cairo expat freetype fontconfig glib zlib libpng lib && \
     
     # GraphViz tools 
     apk add libtool swig && \
